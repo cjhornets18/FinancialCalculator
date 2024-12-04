@@ -1,0 +1,41 @@
+﻿<Window x:Class="FinancialCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinancialCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="lbExpenses" Margin="400,10,10,110" ItemsSource="{DynamicResource colExpenses}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="Name" />
+                            <ColumnDefinition SharedSizeGroup="Value" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Margin="2" Text="{Binding Name}" Grid.Column="0"></TextBlock>
+                        <TextBlock Margin="2" Text="{Binding Value}" Grid.Column="1"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="inputExpenseName" HorizontalAlignment="Left" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputExpenseValue" HorizontalAlignment="Left" Margin="170,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddExpense" Content="Add Expense" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="90" Click="btnAddExpense_Click"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amount:" HorizontalAlignment="Left" Margin="170,104,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRemoveExpense" Content="Remove Expense" HorizontalAlignment="Left" Margin="400,369,0,0" VerticalAlignment="Top" Width="100" Click="btnRemoveExpense_Click"/>
+        <TextBox x:Name="inputIncome" HorizontalAlignment="Left" Margin="10,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Gross Income:" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSetIncome" Content="Set Income" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="90" Click="btnSetIncome_Click"/>
+        <Label x:Name="txtGrossIncomeValue" Content="" HorizontalAlignment="Left" Margin="100,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Net Income:" HorizontalAlignment="Left" Margin="10,338,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="txtNetIncomeValue" Content="" HorizontalAlignment="Left" Margin="95,338,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSaveData" Content="Save Input" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Width="90" Click="btnSaveData_Click"/>
+        <Label Content="Total Expenses:" HorizontalAlignment="Left" Margin="400,338,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="txtTotalExpensesValue" Content="" HorizontalAlignment="Left" Margin="499,338,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SaveData\**" />
+    <EmbeddedResource Remove="SaveData\**" />
+    <None Remove="SaveData\**" />
+    <Page Remove="SaveData\**" />
+  </ItemGroup>
+
+</Project>
